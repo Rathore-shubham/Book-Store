@@ -1,0 +1,10 @@
+<h1>Add or Edit Book</h1>
+<form method="post">
+    {% csrf_token %}
+    <label>Title: <input type="text" name="title" value="{{ book.title|default:'' }}"></label><br>
+    <label>Author: <input type="text" name="author" value="{{ book.author|default:'' }}"></label><br>
+    <label>Published Date: <input type="date" name="published_date" value="{{ book.published_date|default:'' }}"></label><br>
+    <label>ISBN: <input type="text" name="isbn" value="{{ book.isbn|default:'' }}"></label><br>
+    <button type="submit">Save</button>
+</form>
+<a href="{% url 'book_list' %}">Cancel</a>
